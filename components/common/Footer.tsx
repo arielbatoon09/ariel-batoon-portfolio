@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 export default function Footer() {
   return (
     <footer className="border-t">
-      <div className="max-w-screen-xl mx-auto py-8 md:py-12">
+      <div className="max-w-screen-xl mx-auto px-6 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Portfolio</h3>

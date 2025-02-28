@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Link from "next/link";
 import Image from "next/image";
@@ -8,8 +8,8 @@ import { useNavigationStore } from "@/store/navgation.store";
 import { useNvagationItems } from "@/hooks/navigation.hooks";
 import { ModeToggle } from "../mode-toggle";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 
 const MobileMenu = () => {
   const { isMenuOpen, toggleMenu } = useNavigationStore();
@@ -36,15 +36,18 @@ const MobileMenu = () => {
           >
             <div className="py-6 space-y-4">
               {menuItems.map(({ href, label, isActive }) => (
-                <Link key={href} href={href} className={cn(
+                <Link onClick={toggleMenu} key={href} href={href} className={cn(
                     "block text-base font-medium transition-colors hover:text-primary py-2",
                     isActive ? "text-primary" : "text-muted-foreground"
                   )}>
                   {label}
                 </Link>
               ))}
-              <Button asChild className="w-full">
-                <Link href="/contact">Contact</Link>
+              <Button className="w-full" onClick={toggleMenu}>
+                <Link href="/contact" className="flex items-center gap-2">
+                  <span>Get in touch</span>
+                  <ArrowRight />
+                </Link>
               </Button>
             </div>
           </motion.div>
@@ -91,7 +94,10 @@ export function Navbar() {
             <ModeToggle />
           </div>
           <Button className="hidden md:inline-flex">
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact" className="flex items-center gap-2">
+              <span>Get in touch</span>
+              <ArrowRight />
+            </Link>
           </Button>
 
           <div className="md:hidden flex items-center gap-2">

@@ -7,7 +7,7 @@ import { ArrowRight} from "lucide-react"
 export function FeaturedProjects() {
   return (
     <section className="py-20">
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-screen-xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
